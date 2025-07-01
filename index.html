@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pravin Sharma | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a2e;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #1a1a2e;
+      border-left: 5px solid #00bcd4;
+      padding-left: 10px;
+    }
+
+    .project {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #3498db;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-badge {
+      background-color: #3498db;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form button {
+      background: #00bcd4;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #0097a7;
+    }
+
+    footer {
+      text-align: center;
+      background: #1a1a2e;
+      color: white;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .skills {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Pravin Sharma</h1>
+    <p>Java Full Stack Developer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate Java Full Stack Developer with hands-on experience in developing web applications using HTML, CSS, JavaScript, Java, Spring Boot, and MySQL.
+      I also explore backend scripting using Python and Flask. I aim to build scalable, efficient, and elegant solutions for real-world problems.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill-badge">Java</span>
+      <span class="skill-badge">Spring Boot</span>
+      <span class="skill-badge">HTML</span>
+      <span class="skill-badge">CSS</span>
+      <span class="skill-badge">JavaScript</span>
+      <span class="skill-badge">MySQL</span>
+      <span class="skill-badge">Python</span>
+      <span class="skill-badge">Flask</span>
+      <span class="skill-badge">Git</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>ATM Machine in Java</h3>
+      <p>A console-based ATM simulator using Java and Scanner class. Implements basic banking operations like withdrawal, deposit, and balance check.</p>
+    </div>
+    <div class="project">
+      <h3>Inventory Management System</h3>
+      <p>Developed using Java, MySQL, and JDBC. Manages stock details, supplier records, and inventory reports for small businesses.</p>
+    </div>
+    <div class="project">
+      <h3>Flask-based Contact Manager</h3>
+      <p>A web app built with Python Flask to manage user contacts, with CRUD operations, SQLite database integration, and Bootstrap UI.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="responseMessage" style="margin-top: 10px;"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pravin Sharma. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const response = document.getElementById("responseMessage");
+
+      if (name && email && message) {
+        response.textContent = "Thanks for your message, " + name + "!";
+        response.style.color = "green";
+        this.reset();
+      } else {
+        response.textContent = "Please fill in all fields.";
+        response.style.color = "red";
+      }
+    });
+  </script>
+
+</body>
+</html>
